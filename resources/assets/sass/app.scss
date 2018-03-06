@@ -1,0 +1,134 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Functions
+@mixin blur($value){
+    -webkit-filter: blur($value);
+    -moz-filter: blur($value);
+    -o-filter: blur($value);
+    -ms-filter: blur($value);
+    filter: blur($value);
+}
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "node_modules/bootstrap/dist/css/bootstrap";
+
+.navbar{
+    border-radius: 0px !important;   
+}
+
+*:focus{
+    outline: none;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.ui-select-choices{
+    width:100%;
+}
+ 
+.title-menu{
+    margin: 0;
+    padding-left: 10px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.style-container{
+    background: #FFF;
+    border:1px solid #cccccc;
+    padding:10px;
+}
+
+.ui-select-container{
+    height:auto;
+    width: 100% !important;
+
+    input{
+        border: 0px;
+    }
+}
+
+.loading{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.71);
+    z-index: 99;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    .box-loading{
+        background: #FFf;
+        display: inline-block;
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }  
+}
+
+.price{
+    text-align: right;
+    font-size: 19px;
+    color: green;
+}
+
+.container-image{
+    position:relative;
+    overflow: hidden;
+    max-height: 260px;
+    margin-bottom:20px;
+
+    .effect-image{
+        background-position: center center !important;
+        background-size: contain !important;
+        @include blur(8px);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+
+    img {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .title{
+        position: absolute;
+        left: 50%;
+        letter-spacing: 3px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        text-transform: uppercase;
+        color: #5d5a5a;
+        font-weight: bold;
+        text-shadow: 4px 4px 0px #ffffff;
+    }
+}
+
+.image-box{
+    display: inline-block;
+}
+
+.clear{
+    font-size: 0;
+    text-align: left;
+    }
+    
+.clear > div[class*="col"]{
+display: inline-block;
+vertical-align: top;
+float: none;
+}
