@@ -174,8 +174,11 @@ class CategoriesController extends Controller
      * @return void
      */
     private function delete_image($image){
-        if(!empty($image))
-            $this->storage->delete($image);
+        if(!empty($image)){
+            $adjust = str_replace('storage', './public', $image);
+            $this->storage->delete($adjust);
+        }
+            
     }
 
 }
